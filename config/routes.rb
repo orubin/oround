@@ -3,13 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'api/get_feed' => 'api/v1/feed#get_feed'
-
-  # match 'api/get_feed' => 'feed#get_feed'
-
-  namespace :api, constraints: { format: :json } do
-    namespace :v1 do
-      resource :feed, only: [:get_feed]
-    end
-  end
+  get 'api/login' => 'api/v1/user#create_user'
+  get 'api/login' => 'api/v1/user#login'
 
 end
