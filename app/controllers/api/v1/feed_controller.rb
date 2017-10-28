@@ -13,7 +13,7 @@ class Api::V1::FeedController < Api::V1::ApplicationController
     second_post = { name: 'second', lat: 32.000, lng: 34.000, img: 'http://www.oround.polak/image.gif'}
     third_post = { name: 'third', lat: 32.000, lng: 34.000, img: 'http://www.oround.polak/image.gif'}
     feed = [first_post, second_post, third_post]
-    render json: feed
+    render json: { code: 200, data: feed }
   end
 
   def check_params(params)
